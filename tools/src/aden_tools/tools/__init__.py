@@ -35,6 +35,7 @@ from .file_system_toolkits.replace_file_content import (
 # Import file system toolkits
 from .file_system_toolkits.view_file import register_tools as register_view_file
 from .file_system_toolkits.write_to_file import register_tools as register_write_to_file
+from .hubspot_tool import register_tools as register_hubspot
 from .pdf_read_tool import register_tools as register_pdf_read
 from .web_scrape_tool import register_tools as register_web_scrape
 from .web_search_tool import register_tools as register_web_search
@@ -64,6 +65,9 @@ def register_all_tools(
     # web_search supports multiple providers (Google, Brave) with auto-detection
     register_web_search(mcp, credentials=credentials)
 
+    # HubSpot CRM integration
+    register_hubspot(mcp, credentials=credentials)
+
     # Register file system toolkits
     register_view_file(mcp)
     register_write_to_file(mcp)
@@ -80,6 +84,11 @@ def register_all_tools(
         "web_search",
         "web_scrape",
         "pdf_read",
+        "hubspot_search",
+        "hubspot_get",
+        "hubspot_create",
+        "hubspot_update",
+        "hubspot_get_associations",
         "view_file",
         "write_to_file",
         "list_dir",

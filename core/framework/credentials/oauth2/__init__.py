@@ -64,6 +64,7 @@ For advanced lifecycle management:
 """
 
 from .base_provider import BaseOAuth2Provider
+from .hubspot import HubSpotOAuth2Provider
 from .lifecycle import TokenLifecycleManager, TokenRefreshResult
 from .provider import (
     OAuth2Config,
@@ -81,6 +82,7 @@ __all__ = [
     "TokenPlacement",
     # Provider
     "BaseOAuth2Provider",
+    "HubSpotOAuth2Provider",
     # Lifecycle
     "TokenLifecycleManager",
     "TokenRefreshResult",
